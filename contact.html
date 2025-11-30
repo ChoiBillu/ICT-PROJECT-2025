@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRUCK KUN | Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific Styles for Contact Page */
+        .map-container {
+            margin-top: 40px; border-radius: 10px; overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .map-container img {
+            width: 100%; height: 350px; object-fit: cover;
+        }
+        .contact-grid {
+            display: grid; grid-template-columns: 2fr 1fr; gap: 40px;
+        }
+        .info-box {
+            padding: 20px; background-color: var(--bg-beige); border-radius: 10px;
+            font-size: 1.1rem; color: var(--primary-brown);
+        }
+        .info-box p { margin-bottom: 15px; display: flex; align-items: center; }
+        .info-box i { margin-right: 10px; color: var(--accent-rosy); }
+        @media (max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+   <header class="header">
+        <button class="hamburger-btn" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
+        
+        <!-- FIX: Logo ab Home Button hai -->
+        <a href="index.html">
+            <img src="Images/truck-logo.png.png" alt="TRUCK KUN Logo" class="logo-img">
+        </a>
+
+        <a href="login.html" class="cta-btn" style="position: absolute; right: 40px; padding: 10px 20px; font-size: 0.9rem; background: var(--accent-rosy); z-index: 1001;">
+            <i class="fas fa-sign-in-alt"></i> Login
+        </a>
+    </header>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+        <a href="index.html" onclick="closeNav()">Home</a>
+        <a href="services/services.html" onclick="closeNav()">Services</a>
+        <a href="calculator.html" onclick="closeNav()">Fare Calculator</a>
+        <a href="contact.html" onclick="closeNav()">Connect With Us</a>
+        <a href="login.html" onclick="closeNav()">Login / Sign Up</a>
+    </div>
+
+    <section class="section">
+        <div class="section-title">
+            <p>Spill the Tea</p>
+            <h2>Contact Our Logistics Team</h2>
+        </div>
+
+        <div class="calc-wrapper"> 
+            <div class="contact-grid">
+                <form id="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <div class="input-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject">
+                    </div>
+                    <div class="input-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" required style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 10px; background: #fafafa;"></textarea>
+                    </div>
+                    <button type="submit" class="calc-btn" style="background: var(--accent-rosy);">Send Message</button>
+                </form>
+
+                <div class="info-box">
+                    <h3>Direct Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Chak 131 JB, Looneywala, Chiniot-Faisalabad Road, Punjab</p>
+                    <p><i class="fas fa-phone"></i> +92 673 585-616</p>
+                    <p><i class="fas fa-envelope"></i> support@truckkun.pk</p>
+                    <p><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 6:00 PM</p>
+                    <p><i class="fas fa-heart"></i> We listen and we don't judge.</i></p>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps?q=Chak+131+JB+Looneywala+Chiniot+Faisalabad+Road+Punjab&output=embed"
+                    width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 TRUCK KUN Logistics. Professional Freight Solutions.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

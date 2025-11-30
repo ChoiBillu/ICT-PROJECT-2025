@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRUCK KUN | Smart Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- LINK TO MAIN STYLE ONLY -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="updateFormInputs()"> <!-- Call function on load to set initial state -->
+
+    <header class="header">
+        <button class="hamburger-btn" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
+        
+        <!-- FIX: Logo ab Home Button hai -->
+        <a href="index.html">
+            <img src="Images/truck-logo.png.png" alt="TRUCK KUN Logo" class="logo-img">
+        </a>
+
+        <a href="login.html" class="cta-btn" style="position: absolute; right: 40px; padding: 10px 20px; font-size: 0.9rem; background: var(--accent-rosy); z-index: 1001;">
+            <i class="fas fa-sign-in-alt"></i> Login
+        </a>
+    </header>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+        <a href="index.html" onclick="closeNav()">Home</a>
+        <a href="services/services.html" onclick="closeNav()">Services</a>
+        <a href="calculator.html" onclick="closeNav()">Fare Calculator</a>
+        <a href="contact.html" onclick="closeNav()">Connect With Us</a>
+        <a href="login.html" onclick="closeNav()">Login / Sign Up</a>
+    </div>
+
+    <section id="calculator" class="section">
+        <div class="section-title">
+            <p>Plan Your Budget</p>
+            <h2>Service Estimator</h2>
+        </div>
+
+        <div class="calc-wrapper">
+            <div class="form-grid">
+                <!-- Service Type Selection -->
+                <div class="input-group full-width">
+                    <label>Select Service</label>
+                    <select id="service-type" onchange="updateFormInputs()">
+                        <option value="heavy">Heavy Transport (By Km & Weight)</option>
+                        <option value="express-city">Express Delivery (Within City)</option>
+                        <option value="express-inter">Express Delivery (Inter-City)</option>
+                        <option value="warehouse-small">Warehousing - Small Unit (100 sq ft)</option>
+                        <option value="warehouse-med">Warehousing - Medium Unit (500 sq ft)</option>
+                        <option value="warehouse-large">Warehousing - Large Unit (2000 sq ft)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Pickup City</label>
+                    <input type="text" placeholder="e.g. Lahore">
+                </div>
+                <div class="input-group">
+                    <label>Dropoff City</label>
+                    <input type="text" placeholder="e.g. Karachi">
+                </div>
+                
+                <div class="input-group">
+                    <label>Distance (km)</label>
+                    <input type="number" id="calc-distance" placeholder="0">
+                </div>
+                
+                <div class="input-group">
+                    <label>Weight (Tons for Heavy / Kg for Express)</label>
+                    <input type="number" id="calc-weight" placeholder="0">
+                </div>
+
+                <!-- Hidden by default via JS -->
+                <div class="input-group">
+                    <label>Duration (Months) - <small>For Warehousing</small></label>
+                    <input type="number" id="calc-months" placeholder="0">
+                </div>
+            </div>
+
+            <button class="calc-btn" onclick="calculateCost()">Calculate Estimate</button>
+
+            <div class="result-box">
+                <div class="breakdown-row">
+                    <span>Base Cost:</span>
+                    <span id="res-base">Rs. 0</span>
+                </div>
+                <div class="breakdown-row">
+                    <span>Tax (16%):</span>
+                    <span id="res-tax">Rs. 0</span>
+                </div>
+                <div class="breakdown-row total">
+                    <span>TOTAL ESTIMATE:</span>
+                    <span class="total-price" id="res-total">Rs. 0</span>
+                </div>
+                <p style="font-size: 0.8rem; color: #888; margin-top: 10px;">*Estimates only. Final price may vary.
+                    <br>*Rang Saaf te Kiraya maaf</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 TRUCK KUN Logistics. Professional Freight Solutions.</p>
+    </footer>
+
+    <!-- LINK TO MAIN SCRIPT ONLY -->
+    <script src="script.js"></script>
+</body>
+</html>

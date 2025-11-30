@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRUCK KUN | Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Yeh line aapke style.css file ko connect karti hai -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <button class="hamburger-btn" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
+        
+        <!-- FIX: Logo ab Home Button hai -->
+        <a href="index.html">
+            <img src="Images/truck-logo.png.png" alt="TRUCK KUN Logo" class="logo-img">
+        </a>
+
+        <a href="login.html" class="cta-btn" style="position: absolute; right: 40px; padding: 10px 20px; font-size: 0.9rem; background: var(--accent-rosy); z-index: 1001;">
+            <i class="fas fa-sign-in-alt"></i> Login
+        </a>
+    </header>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+        <a href="index.html" onclick="closeNav()">Home</a>
+        <a href="services/services.html" onclick="closeNav()">Services</a>
+        <a href="calculator.html" onclick="closeNav()">Fare Calculator</a>
+        <a href="contact.html" onclick="closeNav()">Connect With Us</a> 
+        <a href="login.html" onclick="closeNav()">Login / Sign Up</a>
+    </div>
+    
+    <section class="hero">
+        <div class="hero-text">
+            <div class="hero-quote">"Khair nal jaa, Khair nal ahh"</div>
+            <h1>Delivery Done <br> Drama None</h1>
+            <p>Your Competitors Can't Keep Up. We Have Wild Game.</p>
+            <a href="calculator.html" class="cta-btn">Get a Quote</a>
+        </div>
+        <div class="hero-image-container">
+            <img src="Images/istockphoto-1496871913-612x612.jpg" alt="Truck Art" class="hero-image">
+        </div>
+    </section>
+
+    <div class="tracking-bar">
+        <input type="text" id="trackId" placeholder="Enter Tracking ID (e.g., TK-802)">
+        <button onclick="trackShipment()">Track Shipment</button>
+    </div>
+
+    <div class="banner-track">
+        <div class="moving-truck">
+            <img src="Images/truck-transparent.png" alt="My Truck" style="height: 50px; width: auto;"> 
+        </div>
+    </div>
+
+    <section class="section" style="background: white; text-align: center;">
+        <div class="section-title">
+            <p>Why We Drive</p>
+            <h2>Our Mission</h2>
+        </div>
+        <p style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: #555;">
+           “Truck Kun’s mission is simple: deliver stuff faster than your excuses.
+We promise speed, safety, and style, and if we ever fail, blame the traffic, not us.
+And yes, we make moving stuff look cooler than it actually is.”
+        </p>
+    </section>
+
+    <section id="connect" class="section" style="background: var(--bg-beige); text-align: center;">
+        <div class="section-title">
+            <p>Join The Network</p>
+            <h2>Connect With Drivers</h2>
+        </div>
+        <p style="max-width: 600px; margin: 0 auto 30px;">
+            Are you a fleet owner or independent driver? Join the Truck Kun network to access premium loads.
+        </p>
+        <a href="login.html" class="cta-btn" style="background: var(--primary-brown);">Register as Driver</a>
+    </section>
+
+    <section id="contact" class="section" style="background: var(--primary-brown); color: white;">
+        <div class="section-title" style="margin-bottom: 30px;">
+            <h2 style="color: white;">Contact Info</h2>
+        </div>
+        <div style="text-align: center;">
+            <p><i class="fas fa-map-marker-alt"></i> Chak 131 JB, Looneywala, Chiniot-Faisalabad Road, Punjab</p>
+            <p style="margin: 10px 0;"><i class="fas fa-phone"></i> +92 673 585-616</p>
+            <p><i class="fas fa-envelope"></i> support@truckkun.pk</p>
+            <p> Pass kr.. Ya Bardasht kr</p>
+            <a href="contact.html" style="color: var(--accent-rosy); text-decoration: underline;">View Full Contact Page</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 TRUCK KUN Logistics. Professional Freight Solutions.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

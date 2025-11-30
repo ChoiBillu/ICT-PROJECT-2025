@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRUCK KUN | Login/Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Yeh line style.css connect karti hai -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific Styles for Auth Page jo style.css mein nahi hain */
+        .auth-container {
+            display: flex; justify-content: center; align-items: center; min-height: 80vh;
+            background-color: var(--bg-beige); padding: 40px 20px;
+        }
+        .auth-box {
+            background: var(--surface-white); padding: 40px; border-radius: var(--card-radius);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1); width: 100%; max-width: 400px;
+        }
+        .tab-buttons { display: flex; margin-bottom: 30px; border-radius: 10px; overflow: hidden; }
+        .tab-buttons button {
+            flex: 1; padding: 12px; border: none; font-weight: 600; font-size: 1rem;
+            background-color: #eee; color: var(--text-muted); transition: all 0.3s;
+        }
+        .tab-buttons button.active {
+            background-color: var(--primary-brown); color: white;
+            box-shadow: inset 0 -3px 0 0 var(--accent-rosy);
+        }
+        .auth-box input {
+            width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 10px;
+            margin-bottom: 15px; background: #fafafa; font-size: 1rem;
+        }
+        .auth-box .cta-btn {
+            width: 100%; text-align: center; margin-top: 10px;
+        }
+        #signup-form { display: none; }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <button class="hamburger-btn" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
+        
+        <!-- FIX: Logo ab Home Button hai -->
+        <a href="index.html">
+            <img src="Images/truck-logo.png.png" alt="TRUCK KUN Logo" class="logo-img">
+        </a>
+    </header>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="services/services.html">Services</a>
+        <a href="calculator.html">Fare Calculator</a>
+        <a href="contact.html">Connect With Us</a>
+        <a href="login.html">Login / Sign Up</a>
+    </div>
+
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="tab-buttons">
+                <button id="login-tab" class="active" onclick="showForm('login')">Login</button>
+                <button id="signup-tab" onclick="showForm('signup')">Sign Up</button>
+            </div>
+
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="cta-btn">Log In</button>
+                <p style="text-align: center; margin-top: 15px; font-size: 0.9rem;"><a href="#" style="color: var(--accent-rosy); text-decoration: none;">Forgot Password?</a></p>
+            </form>
+
+            <form id="signup-form">
+                 <div class="input-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Create Password" required>
+                </div>
+                <button type="submit" class="cta-btn">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 TRUCK KUN Logistics. Professional Freight Solutions.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function showForm(formType) {
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            const loginTab = document.getElementById('login-tab');
+            const signupTab = document.getElementById('signup-tab');
+
+            if (formType === 'login') {
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+                loginTab.classList.add('active');
+                signupTab.classList.remove('active');
+            } else {
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+                loginTab.classList.remove('active');
+                signupTab.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
