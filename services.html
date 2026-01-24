@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRUCK KUN | Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* --- HOVER TRANSITIONS --- */
+        .service-card {
+            overflow: hidden; 
+            position: relative;
+        }
+
+        .service-card-content {
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease; 
+        }
+
+        .service-card:hover .service-card-content {
+            transform: scale(1.1);
+        }
+
+        .service-card-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+        
+        /* Ensure text is readable */
+        .service-card-text h3 {
+            font-size: 2rem; margin-bottom: 20px; font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+        .service-card-text p {
+            margin-bottom: 25px; font-size: 1rem; color: #e0d8c8;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+        .btn-learn-more {
+            background: transparent; border: 2px solid var(--accent-rosy); color: white;
+            padding: 10px 25px; border-radius: 50px; font-weight: 600; transition: 0.3s;
+            text-decoration: none; display: inline-block;
+        }
+        .btn-learn-more:hover { background: var(--accent-rosy); }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <button class="hamburger-btn" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
+        
+        <a href="../index.html">
+            <img src="../Images/truck-logo.png.png" alt="TRUCK KUN Logo" class="logo-img">
+        </a>
+
+        <a href="../login.html" class="cta-btn" style="position: absolute; right: 40px; padding: 10px 20px; font-size: 0.9rem; background: var(--accent-rosy); z-index: 1001;">
+            <i class="fas fa-sign-in-alt"></i> Login
+        </a>
+    </header>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+        <a href="../index.html" onclick="closeNav()">Home</a>
+        <a href="services.html" onclick="closeNav()">Services</a>
+        <a href="../calculator.html" onclick="closeNav()">Fare Calculator</a>
+        <a href="../contact.html" onclick="closeNav()">Connect With Us</a>
+        <a href="../login.html" onclick="closeNav()">Login / Sign Up</a>
+    </div>
+
+    <section id="services" class="section">
+        <div class="section-title">
+            <p>What We Offer</p>
+            <h2>Our Services</h2>
+        </div>
+        
+        <div class="cards-grid">
+            
+            <div class="service-card">
+                <div class="service-card-content" style="background-image: url('../Images/driver.jpg');">
+                    <div class="service-card-text">
+                        <h3>Heavy Transport</h3>
+                        <p> "We have pretty little drivers for heavy truckload."</p>
+                        <a href="heavy-transport.html" class="btn-learn-more">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-card-content" style="background-image: url('../Images/cold%20chain.jpg');">
+                    <div class="service-card-text">
+                        <h3>Cold Chain</h3>
+                        <p> From our trucks to your hands freshness delivered.</p>
+                        <a href="cold-chain.html" class="btn-learn-more">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-card-content" style="background-image: url('../Images/warehouse.jpg');">
+                    <div class="service-card-text">
+                        <h3>Warehousing</h3>
+                        <p> Keeping it safe, keeping it cool and smooth like a smooth operator. </p>
+                        <a href="warehousing.html" class="btn-learn-more">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-card-content" style="background-image: url('../Images/express.jpg');">
+                    <div class="service-card-text">
+                        <h3>Express Delivery</h3>
+                        <p> Faster than your last text reply, because urgent can’t chill.</p>
+                        <a href="express-delivery.html" class="btn-learn-more">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-card-content" style="background-image: url('../Images/frago.jpg');">
+                    <div class="service-card-text">
+                        <h3>Fragile Cargo</h3>
+                        <p> We can carry all your fragile stuff even the male ego.</p>
+                        <a href="fragile-cargo.html" class="btn-learn-more">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-card-content" style="background-image: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80');">
+                    <div class="service-card-text">
+                        <h3>Cross-Border</h3>
+                        <p> From Pakistan to everywhere else fast, safe, no cap.</p>
+                        <a href="cross-border.html" class="btn-learn-more">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="section" style="background: var(--primary-brown); color: white;">
+        <div class="section-title" style="margin-bottom: 30px;">
+            <h2 style="color: white;">Contact Info</h2>
+        </div>
+        <div style="text-align: center;">
+            <p><i class="fas fa-map-marker-alt"></i> Chak 131 JB, Looneywala, Chiniot-Faisalabad Road, Punjab</p>
+            <p style="margin: 10px 0;"><i class="fas fa-phone"></i> +92 673 585-616</p>
+            <p><i class="fas fa-envelope"></i> support@truckkun.pk</p>
+            <a href="../contact.html" style="color: var(--accent-rosy); text-decoration: underline;">View Full Contact Page</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 TRUCK KUN Logistics. Professional Freight Solutions.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehousing - Truck Kun</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .detail-page { padding: 40px 5%; max-width: 1200px; margin: 0 auto; }
+        .detail-page h1 { color: var(--primary-black); font-size: 2.5rem; margin-bottom: 15px; }
+        .detail-page h2 { color: var(--primary-brown); margin-top: 0; margin-bottom: 15px; font-size: 1.6rem; }
+        .detail-page p { line-height: 1.6; font-size: 1rem; color: var(--text-main); margin-bottom: 15px; }
+        .info-box { background: var(--bg-beige); padding: 20px; border-radius: 15px; margin: 20px 0; border-left: 4px solid var(--accent-rosy); }
+        
+        .features-list { list-style: none; padding: 0; }
+        .features-list li { padding: 8px 10px 8px 35px; position: relative; font-size: 1rem; margin-bottom: 5px; border-radius: 8px; /* Hover effect removed */ }
+        .features-list li:before { content: "➤"; position: absolute; left: 10px; color: var(--accent-rosy); font-weight: bold; font-size: 1.1rem; }
+
+        .warehouse-box { background: white; padding: 20px; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-top: 3px solid var(--primary-brown); /* Hover effect removed */ }
+        .warehouse-box h3 { color: var(--primary-brown); margin-bottom: 8px; font-size: 1.2rem; }
+        
+        .row { display: flex; gap: 30px; margin-bottom: 30px; flex-wrap: wrap; }
+        .col { flex: 1; min-width: 300px; }
+
+        .back-button { margin-top: 20px; padding: 10px 25px; background: var(--primary-black); color: white; border: none; border-radius: 50px; cursor: pointer; text-decoration: none; display: inline-block; font-weight: 600; transition: 0.3s; }
+        .back-button:hover { background: var(--accent-rosy); transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <button class="hamburger-btn" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
+        <a href="../index.html"><img src="../Images/truck-logo.png.png" alt="TRUCK KUN Logo" class="logo-img"></a>
+        <a href="../login.html" class="cta-btn" style="position: absolute; right: 40px; padding: 10px 20px; font-size: 0.9rem; background: var(--accent-rosy); z-index: 1001;"><i class="fas fa-sign-in-alt"></i> Login</a>
+    </header>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+        <a href="../index.html" onclick="closeNav()">Home</a>
+        <a href="services.html" onclick="closeNav()">Services</a>
+        <a href="../calculator.html" onclick="closeNav()">Fare Calculator</a>
+        <a href="../contact.html" onclick="closeNav()">Connect With Us</a>
+        <a href="../login.html" onclick="closeNav()">Login / Sign Up</a>
+    </div>
+
+    <div class="detail-page">
+        <h1>📦 Warehousing Service</h1>
+        <div class="info-box">
+            <h2>About This Service</h2>
+            <p>Our Warehousing service provides secure, climate-controlled storage facilities at major transit hubs across the country.</p>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2>Our Warehouse Locations</h2>
+                <div class="warehouse-box"><h3><i class="fas fa-map-marker-alt"></i> Karachi Warehouse</h3><p><strong>Address:</strong> Port Qasim Logistics Park</p><p><strong>Size:</strong> 50,000 sq ft</p></div>
+                <div class="warehouse-box"><h3><i class="fas fa-map-marker-alt"></i> Lahore Warehouse</h3><p><strong>Address:</strong> Industrial Area, Lahore</p><p><strong>Size:</strong> 35,000 sq ft</p></div>
+                <div class="warehouse-box"><h3><i class="fas fa-map-marker-alt"></i> Islamabad Warehouse</h3><p><strong>Address:</strong> I-9 Industrial Zone</p><p><strong>Size:</strong> 25,000 sq ft</p></div>
+            </div>
+            <div class="col">
+                <h2>Storage Options</h2>
+                <ul class="features-list">
+                    <li>Short-term storage (daily/weekly rates)</li>
+                    <li>Long-term storage (monthly/yearly contracts)</li>
+                    <li>Climate-controlled units</li>
+                    <li>Dry storage areas</li>
+                    <li>Pallet storage</li>
+                </ul>
+                <h2 style="margin-top: 20px;">Services We Offer</h2>
+                <ul class="features-list">
+                    <li>Inventory management</li>
+                    <li>Pick and pack services</li>
+                    <li>Order fulfillment</li>
+                    <li>Cross-docking</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2>Security Features</h2>
+                <ul class="features-list">
+                    <li>24/7 CCTV surveillance</li>
+                    <li>Guarded premises</li>
+                    <li>Access control systems</li>
+                    <li>Fire safety systems</li>
+                    <li>Insurance coverage available</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h2>Pricing</h2>
+                <p><strong>Storage Rates:</strong></p>
+                <ul class="features-list">
+                    <li>Small units (up to 100 sq ft): Rs. 2,000/month</li>
+                    <li>Medium units (100-500 sq ft): Rs. 8,000/month</li>
+                    <li>Large units (500-2000 sq ft): Rs. 25,000/month</li>
+                </ul>
+                <p><strong>Additional Services:</strong></p>
+                <ul class="features-list">
+                    <li>Pick and pack: Rs. 50 per order</li>
+                    <li>Labeling: Rs. 20 per package</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Contact Us</h2>
+        <p><i class="fas fa-phone"></i> +92 673 585-616 | <i class="fas fa-envelope"></i> support@truckkun.pk</p>
+        <a href="services.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to Services</a>
+    </div>
+
+    <footer><p>&copy; 2025 TRUCK KUN Logistics. Professional Freight Solutions.</p></footer>
+    <script src="../script.js"></script>
+</body>
+</html>
